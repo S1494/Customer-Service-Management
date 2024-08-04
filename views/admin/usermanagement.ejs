@@ -1,0 +1,71 @@
+
+<%-include("../../partials/admin/header.ejs")%>
+
+    <section id="body">
+        <div class="container">
+            <div class="row">
+                <%-include("../../partials/admin/left.ejs")%>
+                <div class="col-md-9 mt-2">
+                    <h3 class="text-center">User Register</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>S.NO.</th>
+                                <th>First name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>DOB</th>
+                                <th>Gender</th>
+                                <th>Role</th>
+                                <th>DB Id</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%users.forEach((val, key) =>{%>
+                                <tr>
+                                    <td><%=key+1 %></td>
+                                    <td><%=val.firstname %></td>
+                                    <td><%=val.lastname %></td>
+                                    <td><%=val.email %></td>
+                                    <td><%=val.dob %></td>
+                                    <td><%=val.gender %></td>
+                                    <td><%=val.role %></td>
+                                    <td><%=val.id %></td>
+                                </tr>
+                            <%})%>
+                        </tbody>
+                    </table>
+                    <div class="container ">
+                        <div class="row">
+                            <form action="" method="post">
+                                <h3 class="text-center">Update User</h3>
+                                    <label for="firstname">First Name</label>
+                                    <input value="" type="text" name="firstname" id="" class="form-control">
+                                    <label for="lastname">Last Name</label>
+                                    <input value="" type="text" name="lastname" id="" class="form-control" >
+                                    <label for="email">Email</label>
+                                    <input value="" type="text" name="email" id="" class="form-control" >
+                                    <label for="dob">DOB</label>
+                                    <input value="" type="text" name="dob" id="" class="form-control" >
+                                    <label for="gender">Gender</label>
+                                    <select name="gender" id="" class="form-control" >
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                    <label for="role">Role</label>
+                                    <input value="" type="text" name="role" id="" class="form-control" >
+                                    <label for="status">Status</label>
+                                    <input value="" type="text" name="status" id="" class="form-control" >
+                                    <label for="password">Password</label>
+                                    <input value="" type="text" name="password" id="" class="form-control" >
+                                    <input type="submit" value="Update" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                        
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
